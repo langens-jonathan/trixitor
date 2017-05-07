@@ -1,0 +1,26 @@
+<table>
+<tr><td>start</td><td>{{start}}</td></tr>
+<tr><td>end</td><td>{{end}}</td></tr>
+<tr><td>current word</td><td>{{currentWord}}</td></tr>
+<tr><td>inner Text</td><td>{{innerTextStart}}<b>|</b>{{innerTextEnd}}</td></tr>
+</table>
+<ul>
+{{#each text as |block|}}
+  <li>{{block.string}}</li>
+{{/each}}
+</ul>
+<br>
+
+<br>
+{{trix-editor class="trix-editor-wrapper"
+	      value=text
+              editorClass="trix-editor"
+              trix-attachment-add=(action "handleTrixAction")
+              trix-attachment-remove=(action "handleTrixAction")
+              trix-blur=(action "handleTrixAction")
+              trix-change=(action "handleTrixAction")
+              trix-file-accept=(action "handleTrixAction")
+              trix-focus=(action "handleTrixAction")
+              trix-initialize=(action "handleTrixAction")
+              trix-selection-change=(action "handleTrixAction")}}
+
